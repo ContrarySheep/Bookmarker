@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookmarker</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag("development-override")if Rails.env.development? %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+  <ul id="action_box">
+    <li><%= link_to image_tag('new_off.png', :class => 'swappable'), new_authentic_bookmark_path(@authentic_collection), :title => 'Add Bookmarks' %></li>
+    <li><%= link_to image_tag('show_all_off.png', :class => 'swappable'), authentic_bookmarks_path(@authentic_collection), :title => 'View Bookmarks' %></li>
+    <li><%= link_to image_tag('download_off.png', :class => 'swappable'), authentic_plist_path(@authentic_collection), :title => 'Download File' %></li>
+    <!-- <li><%= link_to image_tag('upload_off.png', :class => 'swappable'), authentic_bookmark_import_path(@authentic_collection), :title => 'Upload Bookmarks' %></li> -->
+  </ul>
+  
+  <div id="user_info">
+    <%= @authentic_collection %>
+  </div>
+  
+  <%= yield %>
+  
+  <div style="display:none">
+    <%= image_tag 'new_over.png' -%><%= image_tag 'show_all_over.png' -%><%= image_tag 'download_over.png' -%>
+  </div>
+  
+</body>
+</html>

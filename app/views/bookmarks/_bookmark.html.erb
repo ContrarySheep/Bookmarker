@@ -1,0 +1,11 @@
+<li id="bookmark_<%= bookmark.id %>">
+  <div class="name">
+    <%= bookmark.name %>
+  </div>
+  <div class="link">
+    <%= link_to bookmark.link, bookmark.link, :target => 'blank' %>
+  </div>
+  <div class="actions">
+    <%= link_to image_tag('edit_off.png', :class => 'swappable'), authentic_bookmark_path(@authentic_collection,bookmark), :title => 'Edit Bookmark' %> <%= link_to image_tag('delete_off.png', :class => 'swappable'), authentic_bookmark_path(@authentic_collection,bookmark), confirm: 'Are you sure?', method: :delete, :title => 'Delete Bookmark' %>
+  </div>
+</li>

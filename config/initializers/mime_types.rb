@@ -1,0 +1,1 @@
+Mime::Type.register_alias "application/x-plist", :plist

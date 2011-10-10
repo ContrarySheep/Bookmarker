@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bookmarker</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag("development-override")if Rails.env.development? %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="home">
+    <h1>Bookmarker</h1>
+    <%= form_for(@collection, :url => establish_collection_path) do |f| %>
+
+      <div class="field">
+        <%= f.label 'Enter Your Bookmark Collection' %><br />
+        <%= f.text_field :name %>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Lookup/Create' %>
+      </div>
+    <% end %>
+    <p>While you can use this bookmark list on the web, you can also download the list as a 'plist' file for use on iOS devices with iDownloader.</p>
+  </div>
+</body>
+</html>

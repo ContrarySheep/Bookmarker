@@ -1,0 +1,24 @@
+<div id="import_bookmark_form">
+  
+  <%= form_tag(authentic_bookmark_process_import_path(@authentic_collection), :method => :post) do |f| %>
+    <%= hidden_field_tag :collection_id, @collection.id %>
+    
+    <div class="field upload">
+      <%= label_tag 'Existing plist:' %><br />
+      <%= text_area_tag :plist %>
+    </div>
+    
+    <div class="actions">
+      <%= submit_tag 'Import' %>
+    </div>
+    
+  <% end %>
+  
+  
+  
+  <div class="instructions">
+    If you have a valid 'bookmarks.plist' file, you may copy and paste it here. The result will be to merge your existing bookmarks with the bookmarks from the pasted file.
+  </div>
+  
+  
+</div>

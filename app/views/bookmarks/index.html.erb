@@ -1,0 +1,9 @@
+<ul id="bookmarks">
+  <% @bookmarks.each do |bookmark| %>
+    <%= render :partial => "bookmark", :locals => {:bookmark => bookmark} %>
+  <% end %>
+</ul>
+
+<div style="display:none">
+  <%= image_tag 'edit_over.png' -%><%= image_tag 'delete_over.png' -%>
+</div>

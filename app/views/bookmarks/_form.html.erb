@@ -1,0 +1,31 @@
+<% if %w[new create].include? @current_action
+  path = authentic_bookmarks_path(@authentic_collection) 
+else
+  path = authentic_bookmark_path(@authentic_collection,@bookmark.id) 
+end
+%>
+
+<div id="bookmark_form">
+  <%= form_for(@bookmark, :url => path) do |f| %>
+    <%= f.hidden_field :collection_id, :value => @collection.id %>
+    <div class="field name">
+      <%= f.label 'Name:' %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field link">
+      <%= f.label 'Link:' %><br />
+      <%= f.text_field :link, :onkeyup => "validateLink()" %>
+    </div>
+    <div class="actions">
+      <%= image_submit_tag('fail_off.png', :class => 'swappable', :id => 'submit_image')%>
+    </div>
+  <% end %>
+  <div class="instructions">
+    Enter a name and link information, then press 'Enter' or click the green checkmark to save the information. <br>
+    The only required information is the link, as the bookmark is pretty much useless without it.
+  </div>
+</div>
+
+<div style="display:none">
+  <%= image_tag 'fail_off.png' -%><%= image_tag 'fail_over.png' -%><%= image_tag 'pass_off.png' -%><%= image_tag 'pass_over.png' -%>
+</div>

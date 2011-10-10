@@ -1,0 +1,265 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+*/
+
+$main-font: 14px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+$input-font: 1.2em/1.2em "AmericanTypewriter", Monaco, monospace;
+
+@mixin header-gradient{
+  background-color: #f8f8f8;
+	background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#f8f8f8), to(white));
+}
+
+@mixin odd-gradient{
+  background-color: #e8e8e8;
+	background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#e8e8e8), to(#f8f8f8));
+}
+
+@mixin even-gradient{
+  background-color: #f8f8f8;
+	background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#f8f8f8), to(white));
+}
+
+body{
+	margin: 0;
+  width: 100%;
+  min-width: 600px;
+  font: $main-font;
+	color: #666;
+}
+
+input{
+  font: $main-font;
+}
+
+#home{
+  text-align: center;
+  width: 600px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+	h1{
+  	font-size: 5em;
+  	margin: 0;
+  }
+  p{
+  	font-size: .9em;
+  	font-style: italic;
+  	padding: 0 75px;
+  }
+  .new_collection{
+    label{
+    	margin-top: 33px;
+    	position: absolute;
+    	width: 600px;
+    	font-size: 1.8em;
+    	color: #eaeaea;
+    	z-index: -1;
+    }
+    input[type='text']{
+      font: $input-font;
+    	font-size: 3em;
+    	width: 500px;
+    	padding: 3px;
+    	border: 1px solid #d5d5d5;
+    	text-align: center;
+    	background-color: transparent;
+    }
+    input[type='submit']{
+      color: #797979;
+    	background-color: #d5d5d5;
+    	-moz-border-radius: 1em;
+    	border-radius: 1em;
+    	border: 1px solid #797979;
+    	font-size: .8em;
+    	font-weight: bold;
+    	padding: .5em 1em .6em;
+    	margin-top: 15px;
+    	margin-bottom: 25px;
+    	cursor: pointer;
+    	&:hover{
+    	  background-color: #f89417;
+    	  color: #ffffff;
+    	}
+    }
+  }
+}
+
+#action_box{
+	@include header-gradient;
+	margin: 0;
+	padding: 0;
+	padding-left: .5em;
+	border-bottom: 1px solid #d5d5d5;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  height: 3em;
+	li{
+  	list-style-type: none;
+  	display: inline-block;
+  	a{
+    	display: block;
+      text-decoration: none;
+      font-size: .8em;
+      margin-top: .6em;
+    	img{
+      	width: 30px;
+      }
+    }
+  }
+}
+
+#user_info{
+	color: #797979;
+	position: fixed;
+	z-index: 100;
+	right: 5px;
+	font-size: .8em;
+	font-weight: bold;
+	padding: .5em 1em .7em;
+	top: .9em;
+}
+
+#bookmarks{
+	margin: 0;
+	padding: 0;
+	padding-top: 3em;
+	li{
+	  font-size: 1.3em;
+  	list-style-type: none;
+  	padding: 5px;
+  	margin: 0;
+  	border-bottom: 1px solid #d5d5d5;
+    height: 2.2em;
+    &:nth-child(n){
+      @include odd-gradient;
+    }
+    &:nth-child(2n){
+      @include even-gradient;
+    }
+    a{
+    	text-decoration: underline;
+    	color: #797979;
+    	img{
+      	width: 30px;
+      }
+    }
+    .name{
+    	font-weight: bold;
+    	display: inline-block;
+    	width: 30%;
+    	overflow: hidden;
+    	position: absolute;
+      padding: .4em .5em .5em;
+      color: #424242;
+      height: 1em;
+      line-height: 1.5em;
+    }
+    .link{
+    	display: inline-block;
+    	width: 50%;
+    	overflow: hidden;
+    	position: absolute;
+    	margin-left: 30%;
+    	font-style: italic;
+    	font-size: .8em;
+    	height: 1em;
+      line-height: 1.5em;
+      padding: .4em .5em .5em;
+      margin-top: .3em;
+    }
+    .actions{
+    	text-align: right;
+    	display: block;
+    	margin-top: .3em;
+    	a{
+      	margin-left: 5px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+#import_bookmark_form{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-top: 60px;
+	label{
+  	font-size: .9em;
+  }
+  textarea{
+    border: 1px solid #d5d5d5;
+  	margin: 0;
+  	margin-top: 3px;
+  	display: block;
+  	width: 98%;
+  	height: 300px;
+  	padding: .3em;
+  	font: $input-font;
+  	font-size: 1.4em;
+  }
+  .actions{
+    margin-top: 10px;
+  }
+  .instructions{
+  	font-size: .8em;
+  	font-style: italic;
+  	margin-top: 10px;
+  	color: #929292;
+  }
+}
+
+#bookmark_form{
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	padding-top: 60px;
+	label{
+  	font-size: .9em;
+  }
+  input[type='text']{
+  	border: 1px solid #d5d5d5;
+  	padding: .3em;
+  	padding-left: 1%;
+  	padding-right: 1%;
+  	margin: 0;
+  	margin-top: 3px;
+  	display: block;
+  	width: 98%;
+  	font: $input-font;
+  	font-size: 1.4em;
+  }
+  .field{
+  	display: inline-block;
+    margin-right: 1em;
+    width: 46%;
+    &.name{
+    	width: 30%;
+    	min-width: 100px;
+    }
+    &.link{
+    	width: 60%;
+    	min-width: 200px;
+    }
+  }
+  .actions{
+  	display: inline-block;
+    float: right;
+    margin: 1.5em 0 0;
+    position: absolute;
+    input{
+      width: 30px;
+    }
+  }
+  .instructions{
+  	font-size: .8em;
+  	font-style: italic;
+  	margin-top: 10px;
+  	color: #929292;
+  }
+}
