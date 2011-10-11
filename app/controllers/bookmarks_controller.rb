@@ -64,7 +64,7 @@ class BookmarksController < ApplicationController
   end
   
   def bookmarks
-    @bookmarks = Bookmark.find(:all, :order => 'name ASC')
+    @bookmarks = @collection.bookmarks
   end
   
   protected
