@@ -6,6 +6,6 @@
     <%= link_to bookmark.link, bookmark.link, :target => 'blank' %>
   </div>
   <div class="actions">
-    <%= link_to image_tag('edit_off.png', :class => 'swappable'), authentic_bookmark_path(@authentic_collection,bookmark), :title => 'Edit Bookmark' %> <%= link_to image_tag('delete_off.png', :class => 'swappable'), authentic_bookmark_path(@authentic_collection,bookmark), confirm: 'Are you sure?', method: :delete, :title => 'Delete Bookmark' %>
+    <%= link_to image_tag('/icons/edit_off.png', :class => 'swappable'), authentic_bookmark_path(@authentic_collection,bookmark), :title => 'Edit Bookmark' %> <%= link_to image_tag('/icons/delete_off.png', :class => 'swappable'), authentic_bookmark_path(@authentic_collection,bookmark), confirm: 'Are you sure?', method: :delete, :title => 'Delete Bookmark' %>
   </div>
 </li>

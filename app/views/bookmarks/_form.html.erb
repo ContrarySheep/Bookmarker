@@ -17,7 +17,7 @@ end
       <%= f.text_field :link, :onkeyup => "validateLink()" %>
     </div>
     <div class="actions">
-      <%= image_submit_tag('fail_off.png', :class => 'swappable', :id => 'submit_image')%>
+      <%= image_submit_tag('/icons/fail_off.png', :class => 'swappable', :id => 'submit_image')%>
     </div>
   <% end %>
   <div class="instructions">
@@ -27,5 +27,5 @@ end
 </div>
 
 <div style="display:none">
-  <%= image_tag 'fail_off.png' -%><%= image_tag 'fail_over.png' -%><%= image_tag 'pass_off.png' -%><%= image_tag 'pass_over.png' -%>
+  <%= image_tag '/icons/fail_off.png' -%><%= image_tag '/icons/fail_over.png' -%><%= image_tag '/icons/pass_off.png' -%><%= image_tag '/icons/pass_over.png' -%>
 </div>
